@@ -144,8 +144,11 @@ public class NumToString {
         }else if (num2 != 1 && num1 != 0){
             System.out.println("The number is: " + str2 + " " + str1);
         }else if (num3 != 0){
-            System.out.println("The number is: " + str3 + str2 + str1);
-        }else {
+            System.out.println("The number is: " + str3);
+        }else if (num3 != 0 || num2 != 0 || num1 != 0 ){
+            System.out.println("The number is: " + str3 + " and " + str2 + " " + str1 );
+        }
+        else {
             System.out.println("Out of ability");
         }
     }
