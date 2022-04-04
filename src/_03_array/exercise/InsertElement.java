@@ -5,23 +5,33 @@ import java.util.Scanner;
 
 public class InsertElement {
     public static void main(String[] args) {
-        int[] arr = {3, 4, 5, 6, 1, 7, 0, 0, 0, 0};
+        int[] arg = createArray();
+        System.out.println(Arrays.toString(arg));
         Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập số muốn thêm");
-        int n = sc.nextInt();
-        int index;
-        do{
-            System.out.println("Nhập vị trí muốn thêm");
-            index = sc.nextInt();
-        }while (index <= -1 || index >= arr.length - 1);
-        System.out.println(n);
-        System.out.println(index);
-        for (int i = arr.length - 1; i > index ; i--) {
-            arr[i] = arr[i - 1];
+        System.out.println("Nhập số muốn thêm: ");
+        int num = sc.nextInt();
+        System.out.println("Nhập vị trí muốn thêm: ");
+        int k = sc.nextInt();
+        System.out.println(Arrays.toString(insertElement(arg, num, k)));
+
+    }
+    public static int[] createArray(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập kích thước mảng: ");
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+        for (int i = 0; i < size ; i++) {
+            System.out.print("Nhập phần tử thứ " + (i + 1) + ": ");
+            arr[i] = sc.nextInt();
         }
-        arr[index] = n;
-        System.out.println("Mảng sau khi chèn là: ");
-        System.out.println(Arrays.toString(arr));
+        return arr;
     }
 
+    public static int[] insertElement(int[] array, int n, int index){
+        for (int i = array.length - 1; i > index ; i--) {
+            array[i] = array[i - 1];
+        }
+        array[index] = n;
+        return array;
+    }
 }

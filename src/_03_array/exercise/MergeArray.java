@@ -10,7 +10,7 @@ public class MergeArray {
         int size1, size2, size3;
         int[] arr1, arr2, arr3;
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhập vào độ dài mảng thứ nhất:");
+        System.out.print("Nhập vào độ dài mảng thứ nhất: ");
         size1 = sc.nextInt();
         arr1 = new int[size1];
         for (int i = 0; i < arr1.length ; i++) {
@@ -27,18 +27,22 @@ public class MergeArray {
             System.out.print("Nhập phần tử thứ" + (i + 1) + ": ");
             arr2[i] = sc.nextInt();
         }
-        System.out.print("Mảng vừa nhập là: ");
+        System.out.println("Mảng vừa nhập là: ");
         System.out.println(Arrays.toString(arr2));
 
-        size3 = size1 + size2;
-        arr3 = new int[size3];
-        for (int i = 0; i < arr1.length ; i++) {
-            arr3[i] = arr1[i];
-        }
-        for (int i = 0; i < arr2.length ; i++) {
-            arr3[i + arr1.length] = arr2[i];
-        }
+        int[] newArr = mergeArray(arr1, arr2);
         System.out.print("Mảng sau khi gộp là: ");
-        System.out.println(Arrays.toString(arr3));
+        System.out.println(Arrays.toString(newArr));
+    }
+
+    public static int[] mergeArray(int[] arg1, int[] arg2){
+        int[] argMerge = new int[arg1.length + arg2.length];
+        for (int i = 0; i < arg1.length ; i++) {
+            argMerge[i] = arg1[i];
+        }
+        for (int i = 0; i < arg2.length ; i++) {
+            argMerge[i + arg1.length] = arg2[i];
+        }
+        return argMerge;
     }
 }
