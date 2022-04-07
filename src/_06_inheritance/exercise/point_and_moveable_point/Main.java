@@ -7,5 +7,10 @@ public class Main {
 
         point = new Point(6,9);
         System.out.println(point);
+
+        MoveablePoint moveablePoint = new MoveablePoint(1.0f,1.0f,1.0f,1.0f);
+        System.out.println(moveablePoint);
+        System.out.println(moveablePoint.move());
+
     }
 }
