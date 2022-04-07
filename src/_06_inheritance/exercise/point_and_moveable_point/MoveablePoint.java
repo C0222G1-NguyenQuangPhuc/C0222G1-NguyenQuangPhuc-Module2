@@ -44,8 +44,7 @@ public class MoveablePoint extends Point{
     }
 
     public float[] getSpeed(){
-        float[] arr = {xSpeed, ySpeed};
-        return arr;
+        return new float[]{getxSpeed(),getySpeed()};
     }
 
     @Override
