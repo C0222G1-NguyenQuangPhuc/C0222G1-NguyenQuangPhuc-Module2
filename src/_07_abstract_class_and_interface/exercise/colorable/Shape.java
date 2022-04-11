@@ -3,8 +3,10 @@ package _07_abstract_class_and_interface.exercise.colorable;
 import _07_abstract_class_and_interface.exercise.resizeable.Resizeable;
 
 public abstract class Shape implements Resizeable {
-    private String color = "green" ;
+    private String color = "green";
     private boolean filled = true;
+
+    abstract double getArea();
 
     public Shape() {
     }

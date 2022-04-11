@@ -23,21 +23,17 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
-    public void radius(double radius){
-        this.radius = radius;
-    }
-
-    public double getArea(){
+    public double getArea() {
         return radius * radius * Math.PI;
     }
 
-    public double getPerimeter(){
-        return radius * 2 * Math.PI;
+    public double getPerimeter() {
+        return 2 * radius * Math.PI;
     }
 
     @Override
     public String toString() {
-        return "A circle with radius = "
+        return "A Circle with radius="
                 + getRadius()
                 + ", which is a subclass of "
                 + super.toString();
@@ -45,6 +41,6 @@ public class Circle extends Shape {
 
     @Override
     public void resize(double percent) {
-        setRadius(getRadius() * percent);
+        this.radius = this.radius * (1 + percent / 100);
     }
 }

@@ -1,6 +1,6 @@
 package _07_abstract_class_and_interface.exercise.resizeable;
 
-public class Rectangle extends Shape {
+public class Rectangle extends Shape{
     private double width = 1.0;
     private double length = 1.0;
 
@@ -12,7 +12,7 @@ public class Rectangle extends Shape {
         this.length = length;
     }
 
-    public Rectangle(double width, double length, String color, boolean filled) {
+    public Rectangle(String color, boolean filled, double width, double length) {
         super(color, filled);
         this.width = width;
         this.length = length;
@@ -54,7 +54,7 @@ public class Rectangle extends Shape {
 
     @Override
     public void resize(double percent) {
-        setWidth(getWidth() * percent);
-        setLength(getLength() * percent);
+        this.length = this.length * (1 + percent / 100);
+        this.width = this.width * (1 + percent / 100);
     }
 }

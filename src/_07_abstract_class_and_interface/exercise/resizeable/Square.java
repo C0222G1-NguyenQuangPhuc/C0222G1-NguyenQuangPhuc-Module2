@@ -1,6 +1,6 @@
-package _07_abstract_class_and_interface.exercise.colorable;
+package _07_abstract_class_and_interface.exercise.resizeable;
 
-public class Square extends Rectangle implements Colorable {
+public class Square extends Rectangle{
     private double side = 1.0;
 
     public Square() {
@@ -44,10 +44,5 @@ public class Square extends Rectangle implements Colorable {
                 + getSide()
                 + ", which is a subclass of "
                 + super.toString();
-    }
-
-    @Override
-    public void howToColor() {
-        System.out.println("Color all four sides");
     }
 }
