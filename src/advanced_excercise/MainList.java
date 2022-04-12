@@ -129,6 +129,7 @@ public class MainList {
         System.out.println("Delete successful");
     }
 
+    //Delete by name
     public static void delete() {
         boolean check = true;
         while (check) {
