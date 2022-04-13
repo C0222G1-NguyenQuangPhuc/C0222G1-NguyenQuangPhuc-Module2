@@ -9,8 +9,8 @@ public class TestColorable {
         System.out.println("Element of shapes is: ");
         for (Shape item: shapes) {
             System.out.println(item.getArea());
-            if (item instanceof Square){
-                System.out.println("Square has a colorable");
+            if (item instanceof Colorable){
+                System.out.println("Shape Square has a colorable");
                 ((Square) item).howToColor();
             }
         }
