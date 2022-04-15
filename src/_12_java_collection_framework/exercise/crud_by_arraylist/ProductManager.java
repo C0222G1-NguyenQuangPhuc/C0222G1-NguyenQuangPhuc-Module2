@@ -1,0 +1,110 @@
+package _12_java_collection_framework.exercise.crud_by_arraylist;
+
+import java.util.*;
+
+public class ProductManager{
+    static Scanner sc = new Scanner(System.in);
+    static List<Product> arrProduct = new ArrayList<>();
+
+    static {
+        Product product1 = new Product(1, "car", 1000);
+        Product product2 = new Product(2, "phone", 2200);
+        Product product3 = new Product(3, "clothes", 1400);
+        arrProduct.add(product1);
+        arrProduct.add(product2);
+        arrProduct.add(product3);
+    }
+
+    public static void addNewProduct() {
+        System.out.println("Input new id");
+        int newId = Integer.parseInt(sc.nextLine());
+        System.out.println("Input new name");
+        String newName = sc.nextLine();
+        System.out.println("Input new price");
+        double newPrice = Double.parseDouble(sc.nextLine());
+        Product newProduct = new Product(newId, newName, newPrice);
+        arrProduct.add(newProduct);
+        System.out.println("Add new successful");
+    }
+
+    public static void updateProduct() {
+        System.out.println("Input id");
+        int id = Integer.parseInt(sc.nextLine());
+        boolean check = true;
+        for (Product item : arrProduct) {
+            if (item.getId() == id) {
+                System.out.println("Input update ID: ");
+                item.setId(Integer.parseInt(sc.nextLine()));
+                System.out.println("Input update name: ");
+                item.setName(sc.nextLine());
+                System.out.println("Input update price");
+                item.setPrice(Double.parseDouble(sc.nextLine()));
+                displayProductList();
+                check = true;
+                break;
+            } else {
+                check = false;
+            }
+        }
+        if (!check) {
+            System.out.println("Not found");
+        }
+    }
+
+    public static void displayProductList() {
+        for (Product item : arrProduct) {
+            System.out.println(item.toString());
+        }
+    }
+
+    public static void findByName() {
+        System.out.println("Input name of Product");
+        String findName = sc.nextLine().toLowerCase();
+        boolean check = false;
+        for (Product item : arrProduct) {
+            if (item.getName().toLowerCase().equals(findName)) {
+                System.out.println("Founded");
+                System.out.println(item.toString());
+                check = true;
+                break;
+            } else {
+                check = false;
+            }
+        }
+        if (!check) {
+            System.out.println("Not found");
+        }
+    }
+
+    public static void deleteById() {
+        System.out.println("Input id of product");
+        int id = Integer.parseInt(sc.nextLine());
+        boolean check = true;
+        for (Product item : arrProduct) {
+            if (item.getId() == id) {
+                arrProduct.remove(item);
+                System.out.println("Delete successful");
+                displayProductList();
+                check = true;
+                break;
+            } else {
+                check = false;
+            }
+        }
+        if (!check) {
+            System.out.println("Not found");
+        }
+    }
+
+    public static void sortAscending(){
+        AscendingProduct ascendingProduct = new AscendingProduct();
+        arrProduct.sort(ascendingProduct);
+        displayProductList();
+    }
+
+    public static void sortDescending(){
+        DescendingProduct descendingProduct = new DescendingProduct();
+        arrProduct.sort(descendingProduct);
+        displayProductList();
+    }
+}
