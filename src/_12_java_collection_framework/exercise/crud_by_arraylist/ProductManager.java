@@ -2,7 +2,7 @@ package _12_java_collection_framework.exercise.crud_by_arraylist;
 
 import java.util.*;
 
-public class ProductManager{
+public class ProductManager {
     static Scanner sc = new Scanner(System.in);
     static List<Product> arrProduct = new ArrayList<>();
 
@@ -15,7 +15,7 @@ public class ProductManager{
         arrProduct.add(product3);
     }
 
-    public static void addNewProduct() {
+    public void addNewProduct() {
         System.out.println("Input new id");
         int newId = Integer.parseInt(sc.nextLine());
         System.out.println("Input new name");
@@ -27,10 +27,10 @@ public class ProductManager{
         System.out.println("Add new successful");
     }
 
-    public static void updateProduct() {
+    public void updateProduct() {
         System.out.println("Input id");
         int id = Integer.parseInt(sc.nextLine());
-        boolean check = true;
+        boolean check = false;
         for (Product item : arrProduct) {
             if (item.getId() == id) {
                 System.out.println("Input update ID: ");
@@ -39,11 +39,10 @@ public class ProductManager{
                 item.setName(sc.nextLine());
                 System.out.println("Input update price");
                 item.setPrice(Double.parseDouble(sc.nextLine()));
+                System.out.println("Update successful");
                 displayProductList();
                 check = true;
                 break;
-            } else {
-                check = false;
             }
         }
         if (!check) {
@@ -51,24 +50,22 @@ public class ProductManager{
         }
     }
 
-    public static void displayProductList() {
+    public void displayProductList() {
         for (Product item : arrProduct) {
             System.out.println(item.toString());
         }
     }
 
-    public static void findByName() {
+    public void findByName() {
         System.out.println("Input name of Product");
         String findName = sc.nextLine().toLowerCase();
         boolean check = false;
-        for (Product item : arrProduct) {
-            if (item.getName().toLowerCase().equals(findName)) {
+        for (int i = 0; i < arrProduct.size(); i++) {
+            if (arrProduct.get(i).getName().toLowerCase().contains(findName.toLowerCase())) {
                 System.out.println("Founded");
-                System.out.println(item.toString());
+                System.out.println(arrProduct.get(i));
                 check = true;
                 break;
-            } else {
-                check = false;
             }
         }
         if (!check) {
@@ -76,10 +73,10 @@ public class ProductManager{
         }
     }
 
-    public static void deleteById() {
+    public void deleteById() {
         System.out.println("Input id of product");
         int id = Integer.parseInt(sc.nextLine());
-        boolean check = true;
+        boolean check = false;
         for (Product item : arrProduct) {
             if (item.getId() == id) {
                 arrProduct.remove(item);
@@ -87,8 +84,6 @@ public class ProductManager{
                 displayProductList();
                 check = true;
                 break;
-            } else {
-                check = false;
             }
         }
         if (!check) {
@@ -96,15 +91,19 @@ public class ProductManager{
         }
     }
 
-    public static void sortAscending(){
-        AscendingProduct ascendingProduct = new AscendingProduct();
-        arrProduct.sort(ascendingProduct);
+    public void sortAscending() {
+        System.out.println("Sort by Price ascinding: ");
+        Collections.sort(arrProduct, new AscendingProduct());
+//        AscendingProduct ascendingProduct = new AscendingProduct();
+//        arrProduct.sort(ascendingProduct);
         displayProductList();
     }
 
-    public static void sortDescending(){
-        DescendingProduct descendingProduct = new DescendingProduct();
-        arrProduct.sort(descendingProduct);
+    public void sortDescending() {
+        System.out.println("Sort by Price descending: ");
+        Collections.sort(arrProduct, new DescendingProduct());
+//        DescendingProduct descendingProduct = new DescendingProduct();
+//        arrProduct.sort(descendingProduct);
         displayProductList();
     }
 }
