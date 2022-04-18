@@ -94,16 +94,12 @@ public class ProductManager {
     public void sortAscending() {
         System.out.println("Sort by Price ascinding: ");
         Collections.sort(arrProduct, new AscendingProduct());
-//        AscendingProduct ascendingProduct = new AscendingProduct();
-//        arrProduct.sort(ascendingProduct);
         displayProductList();
     }
 
     public void sortDescending() {
         System.out.println("Sort by Price descending: ");
         Collections.sort(arrProduct, new DescendingProduct());
-//        DescendingProduct descendingProduct = new DescendingProduct();
-//        arrProduct.sort(descendingProduct);
         displayProductList();
     }
 }
