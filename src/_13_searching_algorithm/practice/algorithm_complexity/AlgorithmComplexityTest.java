@@ -1,4 +1,4 @@
-package _13_algorithm_searching.practice.algorithm_complexity;
+package _13_searching_algorithm.practice.algorithm_complexity;
 
 import java.util.Scanner;
 

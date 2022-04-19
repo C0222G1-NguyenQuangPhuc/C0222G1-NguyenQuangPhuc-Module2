@@ -1,4 +1,4 @@
-package _13_algorithm_searching.practice.binary_search_not_recursion;
+package _13_searching_algorithm.practice.binary_search_not_recursion;
 
 public class BinarySearch {
     static int[] list = {2, 4, 7, 10, 11, 45, 50, 59, 60, 66, 69, 70, 79};

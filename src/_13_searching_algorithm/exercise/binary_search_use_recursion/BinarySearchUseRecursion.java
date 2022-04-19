@@ -1,4 +1,4 @@
-package _13_algorithm_searching.exercise.binary_search_use_recursion;
+package _13_searching_algorithm.exercise.binary_search_use_recursion;
 
 import java.util.Arrays;
 import java.util.Scanner;

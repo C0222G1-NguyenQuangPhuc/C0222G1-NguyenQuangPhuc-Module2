@@ -1,6 +1,5 @@
-package _13_algorithm_searching.exercise.find_maximum_subsequence;
+package _13_searching_algorithm.exercise.find_maximum_subsequence;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
