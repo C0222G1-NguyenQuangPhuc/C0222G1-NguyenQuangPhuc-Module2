@@ -92,7 +92,7 @@ public class ProductManager {
     }
 
     public void sortAscending() {
-        System.out.println("Sort by Price ascinding: ");
+        System.out.println("Sort by Price ascending: ");
         Collections.sort(arrProduct, new AscendingProduct());
         displayProductList();
     }
