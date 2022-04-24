@@ -6,19 +6,19 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProductManager {
-    public static final String sourceFile = "src/_17_binary_file_serialization/exercise/product_list.txt";
+    public static final String SOURCE_FILE = "src/_17_binary_file_serialization/exercise/product_list.txt";
     public static List<Product> listProduct = new ArrayList<>();
     public static Scanner sc = new Scanner(System.in);
 
     public void display() throws IOException {
-        listProduct = (List<Product>) ReadAndWriterBinaryFile.readBinaryFile(sourceFile);
+        listProduct = (List<Product>) ReadAndWriterBinaryFile.readBinaryFile(SOURCE_FILE);
         for (Product item : listProduct) {
             System.out.println(item);
         }
     }
 
     public void addNewProduct() throws IOException {
-        listProduct = (List<Product>) ReadAndWriterBinaryFile.readBinaryFile(sourceFile);
+        listProduct = (List<Product>) ReadAndWriterBinaryFile.readBinaryFile(SOURCE_FILE);
         try {
             System.out.println("Enter id: ");
             int id = Integer.parseInt(sc.nextLine());
@@ -40,7 +40,7 @@ public class ProductManager {
     }
 
     public void findById() throws IOException {
-        listProduct = (List<Product>) ReadAndWriterBinaryFile.readBinaryFile(sourceFile);
+        listProduct = (List<Product>) ReadAndWriterBinaryFile.readBinaryFile(SOURCE_FILE);
         System.out.println("Enter Id of Product: ");
         try {
             int id = Integer.parseInt(sc.nextLine());
