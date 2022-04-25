@@ -32,7 +32,7 @@ public class ProductManager {
             String describe = sc.nextLine();
             Product newProduct = new Product(id, name, brand, price, describe);
             listProduct.add(newProduct);
-            ReadAndWriterBinaryFile.writeBinaryFile("src/_17_binary_file_serialization/exercise/product_list.txt", listProduct);
+            ReadAndWriterBinaryFile.writeBinaryFile(SOURCE_FILE, listProduct);
             System.out.println("Add new successful");
         } catch (NumberFormatException e) {
             System.out.println("Retry");
