@@ -12,7 +12,7 @@ public class TestProductManager {
         while (check){
             System.out.println("1. Show list Product.");
             System.out.println("2. Add new Product.");
-            System.out.println("3. Find Product by ID.");
+            System.out.println("3. Find Product by Name.");
             System.out.println("0. Exit.");
             System.out.println("Choose your option: ");
             try {
@@ -24,7 +24,7 @@ public class TestProductManager {
                         productManager.addNewProduct();
                         break;
                     case 3:
-                        productManager.findById();
+                        productManager.findByName();
                         break;
                     case 0:
                         System.exit(0);

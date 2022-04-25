@@ -39,23 +39,19 @@ public class ProductManager {
         }
     }
 
-    public void findById() throws IOException {
+    public void findByName() throws IOException {
         listProduct = (List<Product>) ReadAndWriterBinaryFile.readBinaryFile(SOURCE_FILE);
-        System.out.println("Enter Id of Product: ");
-        try {
-            int id = Integer.parseInt(sc.nextLine());
-            boolean check = false;
-            for (Product item : listProduct) {
-                if (item.getId() == id) {
-                    System.out.println(item.toString());
-                    check = true;
-                }
+        System.out.println("Enter Name of Product: ");
+        String nameProduct = sc.nextLine();
+        boolean check = false;
+        for (Product item : listProduct) {
+            if (item.getName().toLowerCase().contains(nameProduct.toLowerCase())) {
+                System.out.println(item.toString());
+                check = true;
             }
-            if (!check) {
-                System.out.println("Not Found");
-            }
-        } catch (NumberFormatException e) {
-            System.out.println("Please enter right Id Product");
+        }
+        if (!check) {
+            System.out.println("Not Found");
         }
     }
 }
